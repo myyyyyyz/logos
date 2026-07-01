@@ -4,7 +4,9 @@
 
 ## 这是什么
 
-Logos 是一个 CodeBuddy Skill，专为 **AI Coding 工作流** 设计。每次 AI 对话结束后，自动拉取对话内容，生成结构化摘要并沉淀为按天组织的日报文件。
+Logos 是一个通用 AI Skill，专为 **AI Coding 工作流** 设计。每次 AI 对话结束后，自动拉取对话内容，生成结构化摘要并沉淀为按天组织的日报文件。
+
+支持 Claude Code、Cursor、Codex、CodeBuddy 等任意支持 Skill 机制的 AI 编程工具。
 
 ## 解决的问题
 
@@ -15,14 +17,7 @@ Logos 把每一次对话转化为可回溯的知识档案。
 ## 安装
 
 ```bash
-# 克隆到你的项目
-git clone https://github.com/myyyyyyz/logos.git .codebuddy/skills/logos/
-```
-
-或直接作为子模块：
-
-```bash
-git submodule add https://github.com/myyyyyyz/logos.git .codebuddy/skills/logos/
+git clone https://github.com/myyyyyyz/logos.git skills/logos/
 ```
 
 ## 使用方式
@@ -36,15 +31,11 @@ git submodule add https://github.com/myyyyyyz/logos.git .codebuddy/skills/logos/
 
 ### 自动触发（推荐）
 
-通过 CodeBuddy 自动化配置每日定时执行：
+通过 AI 工具的定时调度或 Hook 机制配置自动执行。以每日 19:00 为例：
 
-```
-name: 每日对话沉淀
-prompt: 执行 logos skill，对今日所有对话做总结并写入 docs/daily/YYYY-MM-DD.md
-scheduleType: recurring
-rrule: FREQ=DAILY;BYHOUR=19;BYMINUTE=0
-status: ACTIVE
-```
+- **Claude Code**: 配置 SessionEnd hook 调用本 skill
+- **CodeBuddy / Cursor**: 通过内置的定时任务功能，配置 `执行 logos skill` 即可
+- 其他工具: 参考对应平台的 hook / automation 文档
 
 ## 产出的日报长什么样
 

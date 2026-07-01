@@ -54,22 +54,30 @@ allowed-tools: Read, Write, Edit, Bash, Grep, Glob
 
 ## 自动触发机制
 
-为了让 Skill 在每次对话结束后自动执行，需要配置自动化。
+为了让 Skill 在每次对话结束后自动执行，需要借助 AI 工具的 Hook 或定时任务能力。
 
-### 方案 1：CodeBuddy 自动化（推荐）
+### 方案 1：Hook 触发（推荐）
 
-告知用户可以通过 CodeBuddy 的自动化功能，设置定时触发本 Skill。
-配置参考：
+如果 AI 工具支持 SessionEnd / Stop hook，在对话结束时自动调用本 Skill。参考配置：
 
+```json
+{
+  "hooks": {
+    "Stop": [
+      {
+        "matcher": "",
+        "command": "提示 AI 执行 logos skill 总结本轮对话"
+      }
+    ]
+  }
+}
 ```
-name: 每日对话沉淀
-prompt: 执行 logos skill，对今日所有对话做总结并写入 docs/daily/YYYY-MM-DD.md
-scheduleType: recurring
-rrule: FREQ=DAILY;BYHOUR=19;BYMINUTE=0
-status: ACTIVE
-```
 
-### 方案 2：手动触发
+### 方案 2：定时调度
+
+通过 AI 工具的定时任务功能，设置每日定时触发（如 19:00），对本日所有对话做总结归档。
+
+### 方案 3：手动触发
 
 对话末尾直接说：
 - "记录本次对话"
@@ -77,22 +85,6 @@ status: ACTIVE
 - "/logos"
 
 Skill 会立即执行三步工作流。
-
-### 方案 3：Hook 触发（高级）
-
-如果 IDE 支持 SessionEnd hook，可配置：
-```json
-{
-  "hooks": {
-    "Stop": [
-      {
-        "matcher": "",
-        "command": "echo '请执行 session-journal skill 总结本轮对话'"
-      }
-    ]
-  }
-}
-```
 
 ## 并行策略
 
