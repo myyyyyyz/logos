@@ -127,6 +127,7 @@ logos/
 │   └── daily/
 │       └── 2026-07-02.md
 └── scripts/
+    ├── write.py          # 记忆写入器，时间由系统硬控
     └── validate.ps1
 ```
 
