@@ -12,7 +12,7 @@ git clone https://github.com/myyyyyyz/logos.git skills/logos/
 
 > **"logos"** 或 **"记录本次对话"**
 
-AI 会回顾本轮对话，打捞出重要的想法、决策和灵感，写入 `docs/daily/YYYY-MM-DD.md`。
+AI 会回顾本轮对话，打捞出重要的想法、决策和灵感，写入 `logos/your-memory/YYYY-MM-DD.md`。
 
 ## 为什么需要 Logos
 
@@ -32,7 +32,7 @@ Logos 就是你的"小跟班"。每次对话结束时帮你打捞这些碎片。
 ## 30 秒看效果
 
 ```text
-docs/daily/2026-07-02.md
+logos/your-memory/2026-07-02.md
 
 # 2026年07月02日
 

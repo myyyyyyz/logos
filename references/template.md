@@ -2,7 +2,7 @@
 
 ## 新建文件头
 
-仅当 `docs/daily/YYYY-MM-DD.md` 不存在时写入：
+仅当 `logos/your-memory/YYYY-MM-DD.md` 不存在时写入：
 
 ```markdown
 # {YYYY}年{MM}月{DD}日
