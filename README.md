@@ -5,7 +5,7 @@
 ## 快速开始
 
 ```bash
-git clone https://github.com/myyyyyyz/logos.git skills/logos/
+git clone https://github.com/myyyyyyz/logos-aicoding.git skills/logos/
 ```
 
 在 AI 对话中说：

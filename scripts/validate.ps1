@@ -56,7 +56,7 @@ Assert-Contains "references/template.md" "####" "template.md must include struct
 Assert-Contains "references/template.md" "- \[ \]" "template.md must include checkbox todo syntax"
 Assert-Contains "references/template.md" "\[REDACTED\]" "template.md must mention redaction"
 
-Assert-Contains "README.md" "git clone https://github.com/myyyyyyz/logos.git skills/logos/" "README.md must include installation instructions"
+Assert-Contains "README.md" "git clone https://github.com/myyyyyyz/logos-aicoding.git skills/logos/" "README.md must include installation instructions"
 Assert-Contains "README.md" "logos" "README.md must include usage instructions"
 Assert-Contains "README.md" "API Key" "README.md must include privacy and security guidance"
 Assert-Contains "README.md" "scripts/validate.ps1" "README.md must include validation instructions"
